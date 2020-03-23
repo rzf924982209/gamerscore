@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <table border="1">
+            <tr>
+                <th>排名</th>
+                <th>名字</th>
+                <th>分数</th>
+            </tr>
+            {% for i,j in gamer_sorted.items %}
+            <tr>
+                <td>{{ i }}</td>
+                <td>{{ j.name }}</td>
+                <td>{{ j.score }}</td>
+            </tr>
+            {% endfor %}
+
+            <tr>
+                {% for i,j in gamer_sorted.items %}
+                {% if j.name == gamer.name  %}
+                <td>{{i}}</td>
+                <td>{{j.name}}</td>
+                <td>{{j.score}}</td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+        </table>
+</body>
+</html>
